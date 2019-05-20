@@ -1,0 +1,43 @@
+﻿<Window x:Class="chessboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chessboard"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Chessboard" Height="800" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="650" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical"
+                    Background="DarkGray"
+                    Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                <TextBlock Text="Step on algoriphm: " Margin="10 0"/>
+                <TextBlock Name="StepTextLog" VerticalAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                <TextBlock Text="possible moves: "  FontWeight="Bold" Margin="10 0"/>
+                <TextBlock Name="PossibleMovesLog" VerticalAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+        </StackPanel>
+
+        <UniformGrid Grid.Row="1" Columns="8" Rows="8" x:Name="BoardGrid"/>
+
+        <Button Grid.Row="0" Content="START"
+                Name="StartBtn"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Padding="25 5"
+                FontSize="18"
+                FontWeight="Bold"
+                Click="StartCalculated"></Button>
+
+    </Grid>
+</Window>
